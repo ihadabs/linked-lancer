@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedLancer</title>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+  <link rel="stylesheet" href="../StyleSheets/profileStyle.css">
+  <link rel="stylesheet" href="../StyleSheets/style.css">
+
+</head>
+
+<body>
+  <header class="container">
+    <nav class="navbar navbar-expand-lg  static-top navbar-light bg-light">
+      <div class="container row">
+        <a class="navbar-brand" href="#">
+          <img src="../image/linkedlancer_logo_main.png" class="responsive" id="nav-logo" alt="">
+        </a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Team Members
+                </button>
+                <ul class="dropdown-menu">
+
+                  <li><a href="#">Member 1 account page</a></li>
+                  <li><a href="#">Member 2 account page</a></li>
+                  <li><a href="#">Member 3 account page</a></li>
+
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#start">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">USERNAME
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <br>
+                  <li><a href="#">Manage Account</a></li>
+                  <li><a href="#">Sign Out</a></li>
+
+                </ul>
+              </div>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="Search-btn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+  <main>
+
+    <!--when search button clicked-->
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Seach</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+
+              <input type="email" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Enter the name of
+                project/profile</label>
+            </div>
+
+
+            <div class="modal-footer d-flex justify-content-center">
+
+              <a href="index.html" class="btn btn-primary">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--when contact us button clicked-->
+
+    <div class="modal fade" id="modalContactUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Contact US</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+
+              <input type="email" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">What do you want to tell
+                us?</label>
+            </div>
+
+
+            <div class="modal-footer d-flex justify-content-center">
+
+              <a href="index.html" class="btn btn-primary">Send</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="welcome-section">
+      <div class="welcome-image-container">
+
+        <img id="welcome-image" src="../image/Project-background.jpg" alt="welcome-image">
+        <div class="centered">
+          <h1><b>Creators Team</b></h1>
+          <h5><b>Software is our world</b></h5>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="about">
+      <div class="container">
+        <h1 class="text-light">About Us</h1>
+        <p class="text-light">
+          Software engineering team who is ready and experienced in different field of the software world and it
+          technolog. ready to put the knowledge, effort and experince in order to create software products that are
+          maintainable, efficint and easy to use for all customers
+
+          and directing software system validation and testing methods. Directing our software programming initiatives.
+          Overseeing the development of documentation. Working closely with clients and cross-functional departments to
+          communicate project statuses and proposals
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="profiles-sec">
+          <div id="profile-card-container" class="container">
+            <div class="card">
+              <img id="profile-image" src="../image/profiles images/profile01.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">faisel Authman </h4>
+                <h6 class="card-text">faisel@gmail.com</h6>
+                <p class="profile-description">A software engineer with 3 years of experince interisted in mobile
+                  development. I have done a lot of projects using different languages and technologies like node js,
+                  firebase, java, and php</p>
+                <a href="#" class="btn btn-primary">Send message</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="profiles-sec">
+          <div id="profile-card-container" class="container">
+            <div class="card">
+              <img id="profile-image" src="../image/profiles images/profile02.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">faisel Authman </h4>
+                <h6 class="card-text">faisel@gmail.com</h6>
+                <p class="profile-description">A software engineer with 3 years of experince interisted in mobile
+                  development. I have done a lot of projects using different languages and technologies like node js,
+                  firebase, java, and php</p>
+                <a href="#" class="btn btn-primary">Send message</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="profiles-sec">
+          <div id="profile-card-container" class="container">
+            <div class="card">
+              <img id="profile-image" src="../image/profiles images/profile03.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">faisel Authman </h4>
+                <h6 class="card-text">faisel@gmail.com</h6>
+                <p class="profile-description">A software engineer with 3 years of experince interisted in mobile
+                  development. I have done a lot of projects using different languages and technologies like node js,
+                  firebase, java, and php</p>
+                <a href="#" class="btn btn-primary">Send message</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h3 class="title">
+      Projects created / being created by Creators team
+    </h3>
+
+    <div id="project-card" class="container">
+      <div id="project-content-div" class="card">
+        <div class="welcome-image-container">
+          <img id="project-image" src="../image/projects images/project01.png" alt="welcome-image">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Movies Watcher</h2>
+          <br>
+          <p id="project-description" class="card-text">Buy or rent the newest movies and shows before they hit DVD or
+            streaming. You can also search for titles to see which streaming apps offer them.
+            Anything you buy or rent on Google Play can be downloaded to watch when you’re not connected. Watch
+            instantly on your Android phone or tablet, or on your TV using Chromecast.
+            <br>
+            <button type="button" class="btn btn-link" data-toggle="collapse"
+              data-target="#hided-project-description01">Show more</button>
+          </p>
+          <div id="hided-project-description01" class="collapse">
+            <h6>WATCH ACROSS YOUR STREAMING APPS</h6>
+            <p>New! See if a streaming service offers your favorite show or movie. Just search for it and check to see
+              if other streaming options are available.</p>
+            <h6>NEW WAYS TO DISCOVER SHOWS & MOVIES</h6>
+            <p>Find new shows and movies to watch in just a few taps - from family movies to award-winning crime shows
+              Give a thumbs up or down to get better recommendations for what to watch next</p>
+          </div>
+          <a href="#" class="btn btn-primary">Visit the website</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-card" class="container">
+      <div id="project-content-div" class="card">
+        <div class="welcome-image-container">
+          <img id="project-image" src="../image/projects images/project02.webp" alt="welcome-image">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cool Massenger</h2>
+          <br>
+          <p id="project-description" class="card-text">Be together whenever, with our free* all-in-one communication
+            app, complete with unlimited text, voice, video calling and group video chat features. Easily sync your
+            messages and contacts to your Android phone and connect with anyone, anywhere.
+            <br>
+            <button type="button" class="btn btn-link" data-toggle="collapse"
+              data-target="#hided-project-description02">Show more</button>
+          </p>
+          <div id="hided-project-description02" class="collapse">
+            <h6>FREE VIDEO CALLS TO STAY CONNECTED</h6>
+            <p>Keep your friends and family close with unlimited live video chatting - like facetime, but works across
+              devices (Android, iOS, etc.). Host group video calls with up to 8 people, with high-quality audio, high
+              definition video, and interactive video features like face filters.
+            </p>
+            <h6>UNLIMITED FREE TEXT & PHONE CALLS</h6>
+            <p>Skip exchanging phone numbers and simply send a message to your Facebook friends, even if they’re across
+              the world. Enjoy high-quality voice and text messaging on mobile, tablet, and desktop.</p>
+          </div>
+          <a href="#" class="btn btn-primary">Visit the website</a>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="container-fluid " id="footer">
+
+      <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <a href="index.html"><img id="footer-logo" class="img-fluid" src="../image/logo_dark.png" alt=""></a>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <h5>Quick links</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>About</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Sign in</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+            <ul class="list-unstyled list-inline social text-center">
+              <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a>
+              </li>
+            </ul>
+          </div>
+          </hr>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+            <p class="h6">&copy All right Reversed.</p>
+          </div>
+          </hr>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

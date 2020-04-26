@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedLancer</title>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+  <link rel="stylesheet" href="userstyle.css">
+  <link rel="stylesheet" href="homeStyle.css">
+
+</head>
+
+<body>
+
+  <header class="">
+    <nav class="navbar navbar-expand-lg  static-top navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="image/linkedlancer_logo_main.png" id="nav-logo" alt="">
+        </a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">My profiles
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Creators profile</a></li>
+                <br>
+                <li><a href="#">Create Profile</a></li>
+              </ul>
+            </div>
+            <li class="nav-item">
+              <a class="nav-link" href="messaging.html">messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#modalSearch">search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#modalContactUs">Contact us</a>
+            </li>
+            <div class="dropdown">
+              <button id="account-bt" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Account
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="editProfile.html">Edit Account</a></li>
+                <br>
+                <li><a style="color: red;" href="#">sign out</a></li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <!--when search button clicked-->
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Seach</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            
+            <input type="email" id="defaultForm-email" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Enter the name of project/profile</label>
+          </div>
+  
+       
+        <div class="modal-footer d-flex justify-content-center">
+          
+          <a href="index.html" class="btn btn-primary">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+     <!--when contact us button clicked-->
+
+    <div class="modal fade" id="modalContactUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Contact US</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            
+            <input type="email" id="defaultForm-email" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">What do you want to tell us?</label>
+          </div>
+  
+       
+        <div class="modal-footer d-flex justify-content-center">
+          
+          <a href="index.html" class="btn btn-primary">Send</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+    <div class="container"> 
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+             <div class="panel panel-default">
+                 <div class="panel-body text-center">
+                  <img src="image/project-avatar-input-icon.png" id="project-avatar" class="img-circle profile-avatar" alt="User avatar">
+                 </div>
+                 <div>
+                     <h6 class="image-input">Choose a background for your profile</h6>
+                 </div>
+               </div>
+            </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+         <div class="panel panel-default">
+             <div class="panel-heading">
+             <h4 class="panel-title">Profile Info</h4>
+             </div>
+             <div class="panel-body">
+               <div class="form-group">
+                 <label class="col-sm-6 control-label">Profile name</label>
+                 <div class="col-sm-10">
+                   <input type="tel" class="form-control">
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label class="col-sm-6 control-label">Profile brief dicreption</label>
+                 <div class="col-sm-10">
+                   <input type="tel" class="form-control">
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label class="col-sm-6 control-label">Description</label>
+                 <div class="col-sm-10">
+                   <textarea rows="3" class="form-control"></textarea>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <div class="panel panel-default">
+            <div class="panel-heading">
+            <h4 class="panel-title">Members Email</h4>
+           <a href="#"> <img class="add-member-icon" src="image/add-icon.png" alt="add-icon"></a>
+            <p class="hints">their information will be loaded automatically accourding to the email</p>
+            </div>
+            <div id="new-member-email" class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Member</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h4 class="panel-title">Project Info</h4>
+           <a href="#"> <img class="add-project-icon" src="image/add-icon.png" alt="add-icon"></a>
+            <p class="hints">their information will be loaded automatically from the database accourding to the id</p>
+            </div>
+            <div id="new-project-id" class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">project</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+     
+           <div class="form-group">
+             <div class="col-sm-10 col-sm-offset-2">
+               <button type="submit" class="btn btn-primary"><a class="no-dec-link" href="index.html">Submit</a></button>
+               <button type="reset" class="btn btn-default">Cancel</button>
+             </div>
+           </div>
+        </div>
+        </div>
+     </div>
+
+    <footer class="container-fluid " id="footer">
+
+        <div class="container">
+          <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <a href="index.html"><img id="footer-logo" class="img-fluid" src="image/logo_dark.png" alt=""></a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <h5>Quick links</h5>
+              <ul class="list-unstyled quick-links">
+                <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                <li><a href="index.html"><i class="fa fa-angle-double-right"></i>About</a></li>
+                <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Sign in</a></li>
+              </ul>
+            </div>
+    
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+              <ul class="list-unstyled list-inline social text-center">
+                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a>
+                </li>
+              </ul>
+            </div>
+            </hr>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+              <p class="h6">&copy All right Reversed.</p>
+            </div>
+            </hr>
+          </div>
+        </div>
+      </footer>
+    
+    
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+        <script src="logic.js"></script>
+    
+    </body>
+    
+    </html>

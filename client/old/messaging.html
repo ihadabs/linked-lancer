@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedLancer</title>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+
+  <link rel="stylesheet" href="messagingStyle.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg  static-top navbar-light bg-light">
+      <div class="container row">
+        <a class="navbar-brand" href="#">
+          <img src="image/linkedlancer_logo_main.png" class="responsive" id="nav-logo" alt="">
+        </a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <div class="dropdown">
+              <button id="createProfile-nav" class="btn btn-default dropdown-toggle" type="button"
+                data-toggle="dropdown">My profiles
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Creators profile</a></li>
+                <br>
+                <li><a href="createProfile.html">Create Profile</a></li>
+              </ul>
+            </div>
+            <li class="nav-item">
+              <a class="nav-link active" href="messaging.html">messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#modalSearch">search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#modalContactUs">Contact us</a>
+            </li>
+            <div class="dropdown">
+              <button id="account-bt" class="btn btn-default dropdown-toggle" type="button"
+                data-toggle="dropdown">Account
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="editProfile.html">Edit Account</a></li>
+                <br>
+                <li><a style="color: red;" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+
+    <!--when search button clicked-->
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Seach</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+
+              <input type="email" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Enter the name of
+                project/profile</label>
+            </div>
+
+
+            <div class="modal-footer d-flex justify-content-center">
+
+              <a href="index.html" class="btn btn-primary">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--when contact us button clicked-->
+
+    <div class="modal fade" id="modalContactUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Contact US</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+
+              <input type="email" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">What do you want to tell
+                us?</label>
+            </div>
+
+
+            <div class="modal-footer d-flex justify-content-center">
+
+              <a href="index.html" class="btn btn-primary">Send</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="row">
+        <div id="chat-sec" class="row rounded-lg overflow-hidden shadow">
+          <!-- Users box-->
+          <div id="users-box" class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="width: 2000px;">
+            <div class="">
+              <div class="bg-white">
+
+                <div class="bg-gray px-4 py-2 bg-light">
+                  <a href="#" class="btn btn-link" data-toggle="modal" data-target="#modalLoginForm"
+                    style="float: left;">New Message</a>
+                  <input id="chat-search-bar" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </div>
+
+                <div class="messages-box">
+                  <div class="list-group rounded-0">
+                    <a class="list-group-item list-group-item-action active text-white rounded-0">
+                      <div class="media"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Faisel alauthman</h6><small class="small font-weight-bold">25 Dec</small>
+                          </div>
+                          <p class="font-italic mb-0 text-small">hi i hoop you are doing greate i need to see yoou soon
+                            so we can dicuss the the idea that i have told you about. </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile02.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Hassan alsultan</h6><small class="small font-weight-bold">14 Dec</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">good morning, is the final reprot ready?.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile03.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Khalid almiqbil</h6><small class="small font-weight-bold">9 Nov</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">I have a problem with my account in the
+                            application.</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Faisel alauthman</h6><small class="small font-weight-bold">18 Oct</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">I have new idea for you, can we meet soon?
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile02.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Hassan alsultan</h6><small class="small font-weight-bold">17 Oct</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore.</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile03.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Khalid almiqbil</h6><small class="small font-weight-bold">2 Sep</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">Quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Faisel alauthman</h6><small class="small font-weight-bold">30 Aug</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="image/profiles images/profile02.jpg" alt="user" width="50"
+                          class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">21 Aug</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+
+            <!-- Chat Box-->
+            <div id="chat-box" class=" px-0">
+              <div class="px-4 py-5 chat-box bg-white">
+                <!-- Sender Message-->
+                <div class="media w-100 mb-3"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                    class="rounded-circle">
+                  <div class="media-body ml-3">
+                    <div class="bg-light rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-muted">Test which is a new approach all solutions</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+                <!-- Reciever Message-->
+                <div class="media w-50 ml-auto mb-3">
+                  <div class="media-body">
+                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-white">Test which is a new approach to have all solutions</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+                <!-- Sender Message-->
+                <div class="media w-100 mb-3"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                    class="rounded-circle">
+                  <div class="media-body ml-3">
+                    <div class="bg-light rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-muted">Test, which is a new approach to have</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+                <!-- Reciever Message-->
+                <div class="media w-50 ml-auto mb-3">
+                  <div class="media-body">
+                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+                <!-- Sender Message-->
+                <div class="media w-100 mb-3"><img src="image/profiles images/profile04.jpg" alt="user" width="50"
+                    class="rounded-circle">
+                  <div class="media-body ml-3">
+                    <div class="bg-light rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+                <!-- Reciever Message-->
+                <div class="media w-50 ml-auto mb-3">
+                  <div class="media-body">
+                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Typing area -->
+              <form action="#" class="bg-light">
+                <div class="input-group">
+                  <input type="text" placeholder="Type a message" aria-describedby="button-addon2"
+                    class="form-control rounded-0 border-0 py-4 bg-light">
+                  <div class="input-group-append">
+                    <button id="button-addon2" type="submit" class="btn btn-link"> <i
+                        class="fa fa-paper-plane"></i></button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">New Chat</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+
+              <input type="email" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">enter the reciver email</label>
+            </div>
+
+
+            <div class="modal-footer d-flex justify-content-center">
+
+              <a href="messaging.html" class="btn btn-primary">Create</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <footer class="container-fluid " id="footer">
+
+      <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <a href="index.html"><img id="footer-logo" class="img-fluid" src="image/logo_dark.png" alt=""></a>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <h5>Quick links</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>About</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+              <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Sign in</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+            <ul class="list-unstyled list-inline social text-center">
+              <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a>
+              </li>
+            </ul>
+          </div>
+          </hr>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+            <p class="h6">&copy All right Reversed.</p>
+          </div>
+          </hr>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+    <script src="logic.js"></script>
+
+
+</body>
+
+</html>
