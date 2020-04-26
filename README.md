@@ -2,23 +2,13 @@
 
 ## Steps to Set Up 
 - Clone
-> ```bash
-> git clone https://github.com/ihadabs/linked-lancer.git
-> ```
+> `git clone https://github.com/ihadabs/linked-lancer.git`
 - Go to Project Directory
-> ```bash
-> cd linked-lancer
-> ``` 
+> `cd linked-lancer` 
 - Install Packages
-> ```bash
-> npm i
-> ```
+> `npm i`
 - Run
-> ```bash
-> npm run dev
-> ```
+> `npm run dev`
 - See It on Your Browser
-> ```
-> localhost:3000
-> ```
+> `localhost:3000`
  
