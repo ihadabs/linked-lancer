@@ -55,7 +55,7 @@ const assignProject = (projectId, freelancerId, callback) => {
 const createFreelancer = (request, response) => {
     const {name, email, password} = request.body
     getAccounts((users) => {
-        if (users.find(u => u["AccountEmail"] === email)) response.redirect('/alert-email-used')
+        if (users.find(u => u["AccountEmail"] === email)) response.status(301).redirect('/alert-email-used')
         else pool.query(queries.createAccount, [name, email.toLowerCase(), password, 2, users.length], (error) => {
             if (error) console.log(error)
             response.redirect('/login')
@@ -66,7 +66,7 @@ const createFreelancer = (request, response) => {
 const createEmployer = (request, response) => {
     const {name, email, password} = request.body
     getAccounts((users) => {
-        if (users.find(u => u["AccountEmail"] === email)) response.redirect('/alert-email-used')
+        if (users.find(u => u["AccountEmail"] === email)) response.status(301).redirect('/alert-email-used')
         else pool.query(queries.createAccount, [name, email.toLowerCase(), password, 3, users.length], (error) => {
             if (error) console.log(error)
             response.redirect('/login')
