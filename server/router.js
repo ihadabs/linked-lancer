@@ -29,7 +29,7 @@ router.get('/alert-email-used', forwardAuthenticated, (request, response) =>
 // Login
 router.post('/login', (request, response, next) => {
 		// console.log("here we go login post!")
-		passport.authenticate('local', {
+	 return passport.authenticate('local', {
 			successRedirect: '/user',
 			failureRedirect: '/alert'
 		})(request, response, next)
