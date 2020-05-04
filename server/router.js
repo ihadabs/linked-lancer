@@ -45,7 +45,8 @@ router.post('/assign', ensureAuthenticated, (request, response) => {
 	const projectId = request.body.projectId
 	const freelancerId = request.body.freelancerId
 	db.assignProject(projectId, freelancerId, () => {
-		response.redirect('/user')
+		response.writeHead(301, {'Location': '/user'});
+		response.end()
 	})
 })
 
@@ -55,7 +56,8 @@ router.post('/new-freelancer', forwardAuthenticated, db.createFreelancer)
 // Logout
 router.get('/logout', ensureAuthenticated, (request, response) => {
 	request.logout()
-	response.redirect('/login')
+	response.writeHead(301, {'Location': '/login'});
+	response.end()
 })
 
 // User: admin, freelancer, or employer

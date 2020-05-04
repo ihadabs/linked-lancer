@@ -38,7 +38,8 @@ const createProject = (request, response) => {
     const accountID = request.user["AccountID"]
     pool.query(queries.createProject, [name, budget, requirements, accountID], (error) => {
         console.log(error)
-        response.redirect('/user')
+        response.writeHead(301, {'Location': '/user'});
+        response.end()
     })
 }
 
@@ -58,7 +59,8 @@ const createFreelancer = (request, response) => {
         if (users.find(u => u["AccountEmail"] === email)) response.status(301).redirect('/alert-email-used')
         else pool.query(queries.createAccount, [name, email.toLowerCase(), password, 2, users.length], (error) => {
             if (error) console.log(error)
-            response.redirect('/login')
+            response.writeHead(301, {'Location': '/login'});
+            response.end()
         })
     })
 }
@@ -69,7 +71,8 @@ const createEmployer = (request, response) => {
         if (users.find(u => u["AccountEmail"] === email)) response.status(301).redirect('/alert-email-used')
         else pool.query(queries.createAccount, [name, email.toLowerCase(), password, 3, users.length], (error) => {
             if (error) console.log(error)
-            response.redirect('/login')
+            response.writeHead(301, {'Location': '/login'});
+            response.end()
         })
     })
 }
