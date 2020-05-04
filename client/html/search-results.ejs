@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/users.css">
+
+<main>
+    <div class="container">
+        <div class="row">
+            <style>
+                .widthSet {
+                    max-width: 64px;
+                }
+
+                .heightSet {
+                    max-height: 300px;
+                }
+            </style>
+            <% for(var i = 0; i < projects.length; i++) { %>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="profiles-sec">
+                    <div id="profile-card-container" class="container">
+                        <div class="card">
+                            <img
+                                    src="../images/projects%20images/project01.png"
+                                    alt="Card image" class="heightSet">
+                            <div class="card-body">
+                                <h4 class="card-title"><%= projects[i]["ProjectName"] %></h4>
+                                <h6 class="card-text"><%= projects[i]["AccountName"] %></h6>
+                                <p class="profile-description"><%= projects[i]["ProjectRequirements"] %></p>
+                                <a href="mailto:<%= projects[i]["AccountEmail"] %>" class="btn btn-primary">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <% } %>
+
+            <% for(var i = 0; i < accounts.length; i++) { %>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="profiles-sec">
+                    <div id="profile-card-container" class="container">
+                        <div class="card">
+                            <img
+                                    src="../images/profiles%20images/profile01.jpg"
+                                    alt="Card image" class="heightSet">
+                            <div class="card-body">
+                                <h4 class="card-title"><%= accounts[i]["AccountName"] %></h4>
+                                <h6 class="card-text"><%= accounts[i]["AccountEmail"] %></h6>
+                                <p class="profile-description"><%= accounts[i]["TypeDescription"] %></p>
+                                <p class="profile-description"><%= accounts[i]["AccountID"] %></p>
+                                <a href="mailto:<%= accounts[i]["AccountEmail"] %>" class="btn btn-primary">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    </div>
+</main>
+

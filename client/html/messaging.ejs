@@ -1,0 +1,345 @@
+<link rel="stylesheet" href="../css/main.css">
+
+<main>
+
+    <!--when search button clicked-->
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Seach</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">Enter the name of
+                            project/profile</label>
+                    </div>
+
+
+                    <div class="modal-footer d-flex justify-content-center">
+
+                        <a href="index.html" class="btn btn-primary">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--when contact us button clicked-->
+
+    <div class="modal fade" id="modalContactUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Contact US</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">What do you want to tell
+                            us?</label>
+                    </div>
+
+
+                    <div class="modal-footer d-flex justify-content-center">
+
+                        <a href="index.html" class="btn btn-primary">Send</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="row">
+            <div id="chat-sec" class="row rounded-lg overflow-hidden shadow">
+                <!-- Users box-->
+                <div id="users-box" class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="width: 2000px;">
+                    <div class="">
+                        <div class="bg-white">
+
+                            <div class="bg-gray px-4 py-2 bg-light">
+                                <a href="#" class="btn btn-link" data-toggle="modal" data-target="#modalLoginForm"
+                                   style="float: left;">New Message</a>
+                                <input id="chat-search-bar" class="form-control" type="text" placeholder="Search"
+                                       aria-label="Search">
+                            </div>
+
+                            <div class="messages-box">
+                                <div class="list-group rounded-0">
+                                    <a class="list-group-item list-group-item-action active text-white rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Faisel alauthman</h6><small
+                                                            class="small font-weight-bold">25 Dec</small>
+                                                </div>
+                                                <p class="font-italic mb-0 text-small">hi i hoop you are doing greate i
+                                                    need to see yoou soon
+                                                    so we can dicuss the the idea that i have told you about. </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile02.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Hassan alsultan</h6><small
+                                                            class="small font-weight-bold">14 Dec</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">good morning, is the
+                                                    final reprot ready?.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile03.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Khalid almiqbil</h6><small
+                                                            class="small font-weight-bold">9 Nov</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">I have a problem with
+                                                    my account in the
+                                                    application.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Faisel alauthman</h6><small
+                                                            class="small font-weight-bold">18 Oct</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">I have new idea for
+                                                    you, can we meet soon?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile02.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Hassan alsultan</h6><small
+                                                            class="small font-weight-bold">17 Oct</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">consectetur
+                                                    adipisicing elit, sed do eiusmod
+                                                    tempor incididunt ut labore.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile03.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Khalid almiqbil</h6><small
+                                                            class="small font-weight-bold">2 Sep</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">Quis nostrud
+                                                    exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <h6 class="mb-0">Faisel alauthman</h6><small
+                                                            class="small font-weight-bold">30 Aug</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit
+                                                    amet, consectetur
+                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#"
+                                       class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                        <div class="media"><img src="../images/profiles images/profile02.jpg" alt="user"
+                                                                width="50"
+                                                                class="rounded-circle">
+                                            <div class="media-body ml-4">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">21 Aug</small>
+                                                </div>
+                                                <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit
+                                                    amet, consectetur
+                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+
+                    <!-- Chat Box-->
+                    <div id="chat-box" class=" px-0">
+                        <div class="px-4 py-5 chat-box bg-white">
+                            <!-- Sender Message-->
+                            <div class="media w-100 mb-3"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                               width="50"
+                                                               class="rounded-circle">
+                                <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                            solutions</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                            <!-- Reciever Message-->
+                            <div class="media w-50 ml-auto mb-3">
+                                <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-white">Test which is a new approach to have all
+                                            solutions</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                            <!-- Sender Message-->
+                            <div class="media w-100 mb-3"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                               width="50"
+                                                               class="rounded-circle">
+                                <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-muted">Test, which is a new approach to have</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                            <!-- Reciever Message-->
+                            <div class="media w-50 ml-auto mb-3">
+                                <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                            <!-- Sender Message-->
+                            <div class="media w-100 mb-3"><img src="../images/profiles images/profile04.jpg" alt="user"
+                                                               width="50"
+                                                               class="rounded-circle">
+                                <div class="media-body ml-3">
+                                    <div class="bg-light rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                            <!-- Reciever Message-->
+                            <div class="media w-50 ml-auto mb-3">
+                                <div class="media-body">
+                                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                                        <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                                    </div>
+                                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Typing area -->
+                        <form action="#" class="bg-light">
+                            <div class="input-group">
+                                <input type="text" placeholder="Type a message" aria-describedby="button-addon2"
+                                       class="form-control rounded-0 border-0 py-4 bg-light">
+                                <div class="input-group-append">
+                                    <button id="button-addon2" type="submit" class="btn btn-link"><i
+                                                class="fa fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">New Chat</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">enter the reciver
+                            email</label>
+                    </div>
+
+
+                    <div class="modal-footer d-flex justify-content-center">
+
+                        <a href="messaging.ejs" class="btn btn-primary">Create</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+

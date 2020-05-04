@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="../css/proposal-form.css">
+<link rel="stylesheet" href="../css/main.css">
+
+<main>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title text-dark">Publish Request for Proposal</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="name ">Project Name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="full_name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Scope</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="scope"
+                                           placeholder="the scope of your project"">
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-row">
+                            <div class="name">Description</div>
+                            <div class="value">
+                                <div class="input-group">
+                                                    <textarea class="textarea--style-6" name="description"
+                                                              placeholder="Description of the project and your requirement,deadlines or budget"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Upload File</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" name="file" id="file">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span>
+                                </div>
+                                <div class="label--desc">Upload project document or aby other relevant
+                                    file. Max
+                                    file size 50 MB
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+

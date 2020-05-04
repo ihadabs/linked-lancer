@@ -1,0 +1,253 @@
+<link href="../css/employer.css" rel="stylesheet">
+<div id="loader-wrapper" class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+<div class="myContainer">
+
+
+    <div class="d-flex" id="wrapper">
+
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Employer Dashboard<br><b>Hello <%= user["AccountName"] %></b></div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action bg-light" id="Dashboard-nav">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" id="Projects-nav">Projects</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" id="Make-RFP-nav">Create New
+                    Project</a>
+                <a href="/logout" class="list-group-item list-group-item-action bg-light" id="Make-RFP-nav">Logout</a>
+
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="mx-auto align-items-center">
+
+            <div id="Dashboard" class="container nav-page">
+                <div id="numbers" class="container mx-auto align-items-center">
+                    <h1>Projects</h1>
+                    <div class="card-deck ">
+                        <% for(var i = 0; i < projects.length; i++) { %>
+                            <div class="card text-center" STYLE="max-width: 300px; height: 200px;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= projects[i]["ProjectName"] %></h5>
+                                    <p class="card-text"><%= projects[i]["ProjectStatus"] === 0 ? "In Progress" : "Waiting for Freelancer" %></p>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+                <br><br><br>
+
+
+            </div>
+
+            <div id="Projects" class="container nav-page">
+                <div class="container">
+
+                    <table class="table table-bordered" id="projectTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Project Name</th>
+                            <th>Budget</th>
+                            <th>Status</th>
+                            <th>Freelancer</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Project Name</th>
+                            <th>Budget</th>
+                            <th>Status</th>
+                            <th>Freelancer</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <% for(var i = 0; i < projects.length; i++) { %>
+                            <tr>
+                                <td><%= projects[i]["ProjectID"] %></td>
+                                <td><%= projects[i]["ProjectName"] %></td>
+                                <td><%= projects[i]["ProjectBudget"] %></td>
+                                <td><%= projects[i]["ProjectStatus"] === 0 ? "In Progress" : "Waiting for Freelancer" %></td>
+                                <% if (projects[i]["FreelancerID"] == 0) { %>
+                                    <td>
+                                        <script>
+                                            function enforceMinMax2(el) {
+                                                if (el.value !== "") {
+                                                    if (parseInt(el.value) < parseInt(el.min)) {
+                                                        el.value = el.min;
+                                                    }
+                                                    if (parseInt(el.value) > parseInt(el.max)) {
+                                                        el.value = el.max;
+                                                    }
+
+                                                    let freelancerId = el.value
+                                                    if (!(freelancerId !== null && freelancerId !== "" && !isNaN(freelancerId))) {
+                                                        el.value = el.min;
+                                                    }
+                                                }
+                                            }
+
+                                        </script>
+                                        <form action="/assign" method="post">
+                                            <div class="form-group">
+                                                <input type="number" value="<%= projects[i]["ProjectID"] %>" readonly
+                                                       name="projectId">
+
+                                                <input type="number" min="2" max="<%= accounts.length - 1 %>>"
+                                                       onkeyup=enforceMinMax2(this) name="freelancerId"
+                                                       placeholder="Freelancer ID" style="width: 95%" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit"> Assign</button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <a href="mailto:<%= projects[i]["FreelancerEmail"] %>">Contact<br><%= projects[i]["FreelancerName"] %>
+                                        </a>
+                                    </td>
+                                <% } %>
+                            </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div id="Make-RFP" class="container nav-page">
+                <script>
+                    function enforceMinMax(el) {
+                        if (el.value != "") {
+                            if (parseInt(el.value) < parseInt(el.min)) {
+                                el.value = el.min;
+                            }
+                            if (parseInt(el.value) > parseInt(el.max)) {
+                                el.value = el.max;
+                            }
+                        }
+                    }
+                </script>
+                <!-- add to the database (in Project Table [projectID(auto),Name,the date the form is submited,Budget,requirement,Username,Description,1(means witing for proposal)]) -->
+                <form class="container" action="/project" method="post">
+                    <div class="form-group">
+                        <label for="name">Project Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Project Name" name="name"
+                               required>
+                        <label for="budget">Project Budget</label>
+                        <input type="number" class="form-control" id="budget" placeholder="Enter Project Budget" min="0"
+                               max="100000" name="budget" required
+                               onkeyup=enforceMinMax(this)>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Project Requirements & Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="requirements"
+                                  placeholder="Write Project Requirements & Description" required></textarea>
+                    </div>
+                    <input type="submit" value="Create">
+                </form>
+
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                    crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                    crossorigin="anonymous">
+            </script>
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                  crossorigin="anonymous">
+
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+            <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+            <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+        </div>
+
+    </div>
+</div>
+
+<!-- table  -->
+<script>
+    //sidbar
+    $("#Projects").hide();
+    $("#Make-RFP").hide();
+    $("#Profiles").hide();
+    $("#Massges").hide();
+    $("#Account").hide();
+    $(document).ready(function () {
+
+        $('#projectTable').DataTable();
+
+
+        //dropdawn search (in selecting team for a project)
+        $('.mdb-select').materialSelect();
+        //Check if password is set
+
+        $("#rePassword").keyup(function () {
+            console.log($("#newPassword").val());
+            console.log($("#rePassword").val());
+            if ($("#newPassword").val() != $("#rePassword").val()) {
+                $("#msg").html("Password do not match").css("color", "red");
+            } else {
+                $("#msg").html("Password matched").css("color", "green");
+            }
+        });
+
+    });
+    $("#Dashboard-nav").click(function () {
+        $("#Dashboard").show();
+        $("#Projects").hide();
+        $("#Make-RFP").hide();
+        $("#Massges").hide();
+        $("#Account").hide();
+    });
+    $("#Projects-nav").click(function () {
+        $("#Dashboard").hide();
+        $("#Projects").show();
+        $("#Make-RFP").hide();
+        $("#Massges").hide();
+        $("#Account").hide();
+    });
+
+    $("#Make-RFP-nav").click(function () {
+        $("#Dashboard").hide();
+        $("#Projects").hide();
+        $("#Make-RFP").show();
+        $("#Massges").hide();
+        $("#Account").hide();
+    });
+    $("#Massges-nav").click(function () {
+        $("#Dashboard").hide();
+        $("#Projects").hide();
+        $("#Make-RFP").hide();
+        $("#Massges").show();
+        $("#Account").hide();
+    });
+    $("#Account-nav").click(function () {
+        $("#Dashboard").hide();
+        $("#Projects").hide();
+        $("#Make-RFP").hide();
+        $("#Massges").hide();
+        $("#Account").show();
+    });
+
+
+</script>
