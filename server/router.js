@@ -36,6 +36,7 @@ router.post('/login', (request, response, next) => {
 	}
 )
 
+
 router.get('/login', forwardAuthenticated, (request, response) =>
 	response.render('login')
 )
