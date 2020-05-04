@@ -9,7 +9,7 @@ const expressLayouts = require('express-ejs-layouts')
 const express = require('express')
 const app = express()
 
-const port = 3036
+const port = 3000
 
 // Passport Config
 require('./server/passport')(passport)
