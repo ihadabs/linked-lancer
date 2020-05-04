@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS linkedlancer;
 CREATE DATABASE linkedlancer;
 
-\c postgres p363
+\c postgres linkedlancer
 
 
 DROP VIEW IF EXISTS "ProjectView";
