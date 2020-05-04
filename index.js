@@ -22,6 +22,7 @@ app.use(expressLayouts)
 app.set('view engine', 'ejs')
 app.set('views', path.join(config.__project_dirname, '/client/html'));
 app.use(express.static(config.__project_dirname + '/client'));
+app.enable("trust proxy");
 
 
 // Express body parser
